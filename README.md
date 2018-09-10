@@ -25,4 +25,5 @@ This project, implements crawling from Github repositories by using Akka actors 
 ## TODO:
 
 * Push the extracted relations into Neo4j Database
+* Error handling in fetcher actor
 
