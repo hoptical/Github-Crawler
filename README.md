@@ -5,7 +5,7 @@ This project, implements crawling from Github repositories by using Akka actors 
 ## Configuration Parameters:
 
 - **token** : github limits unauthorized requests for 60 requests per hour for an IP. This limitation could be exceeded to 5000 requests per hour for an authorized user. This is possible with the token parameters which you should take it from your profile setting.
-- **depth: ** This number decides how many layer of followers do you want to application to fetch.
+- **depth:** This number decides how many layer of followers do you want to application to fetch.
 - **future_mode:** Fetchers would fetch faster by wrapping up the future concept in the actor model. Set it as true for faster mode.
 - **n_fetchers:** number of fetcher actors
 - **n_parsers**: number of parser actors
@@ -13,7 +13,7 @@ This project, implements crawling from Github repositories by using Akka actors 
 
 ## Proposed Actor Model:
 
-![](/home/hoptical/IdeaProjects/GithubCrawler/actorModel.png)
+![](./actorModel.png)
 
 ## Inferences
 
