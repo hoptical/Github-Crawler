@@ -17,11 +17,18 @@ This project, implements crawling from Github repositories by using Akka actors 
 
 ## Inferences
 
+* Akka application with single actor is faster than native single thread application and that's because of pipeline nature of actors that akka provdides.
+* with depth=3, these results achieved:
+   * Native single thread: 198s
+   * Akka Single fetcher actor(Future Off): 170s
+   * Akka Single fetcher actor(Future On): 9s
+   * Akka 16 fetcher actors(Future Off): 13s
+   * Akka 16 fetcher actors(Future On): 10s
 * Future would make the actor fetching procedure faster but it's dangerous in "Accessing the sender of a message"
 * Providing multiple actors for parsers and extractors(n_parser>1, n_extractors>1) has wrong result in some runs.
 * Providing multiple actors for parsers and extractors(n_parser>1, n_extractors>1) would not speedup even if the result is right.
 * Increasing the number of fetches(n_fetcher) would speedup but is goes to saturation state after number around 16
-* When future mode is on, increasing n_fetchers is not affecting on speedup 
+* When future mode is on, increasing n_fetchers is not affecting on speedup
 
 ## TODO:
 
