@@ -1,11 +1,12 @@
 # Github Crawler
 
-This project, implements crawling from Github repositories by using Akka actors and by starting from a base user continuing until specified depth parameter.
+This project implements crawling from Github repositories by using Akka actors and by starting from a base user continuing until a specified depth parameter. 
+This is completely inspired by [1].
 
 ## Configuration Parameters:
 
-- **token** : github limits unauthorized requests for 60 requests per hour for an IP. This limitation could be exceeded to 5000 requests per hour for an authorized user. This is possible with the token parameters which you should take it from your profile setting.
-- **depth:** This number decides how many layer of followers do you want to application to fetch.
+- **token:** Github limits unauthorized requests for 60 requests per hour for an IP. This limitation could be exceeded to 5000 requests per hour for an authorized user. This is possible with the token parameters which you should take it from your profile setting.
+- **depth:** This number decides how many layers of followers do you want from the application to fetch.
 - **future_mode:** Fetchers would fetch faster by wrapping up the future concept in the actor model. Set it as true for faster mode.
 - **n_fetchers:** number of fetcher actors
 - **n_parsers**: number of parser actors
@@ -17,7 +18,7 @@ This project, implements crawling from Github repositories by using Akka actors 
 
 ## Inferences
 
-* Akka application with single actor is faster than native single thread application and that's because of pipeline nature of actors that akka provdides.
+* Akka application with a single actor is faster than native single thread application and that's because of pipeline nature of actors that akka provides.
 * with depth=3, these results achieved:
    * Native single thread: 198s
    * Akka Single fetcher actor(Future Off): 170s
@@ -37,3 +38,5 @@ This project, implements crawling from Github repositories by using Akka actors 
 * Monitor actors activities via visualization and metrics
 * Throughput concept should be added to code 
 
+## References:
+[1] P. Bugnion, Scala for data science : leverage the power of Scala to build scalable, robust data science applications.
