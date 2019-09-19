@@ -1,7 +1,6 @@
 # Github Crawler
 
-This project implements crawling from Github repositories by using Akka actors and by starting from a base user continuing until a specified depth parameter. 
-This is completely inspired by [1].
+This project implements crawling from Github repositories by using Akka actors and by starting from a base user continuing until a specified depth parameter which is inspired by the model and its implementation demonstrated in [1].
 
 ## Configuration Parameters:
 
@@ -13,7 +12,7 @@ This is completely inspired by [1].
 - **n_extractors**: number of extractor actors
 
 ## Proposed Actor Model:
-
+This model is designed and explained in [1].
 ![](./actorModel.png)
 
 ## Inferences
